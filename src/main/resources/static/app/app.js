@@ -4,11 +4,11 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		    $routeProvider.
 		    when('/', {
 		    	controller:     'salmane.controlleur',
-		    	templateUrl : 'app/corpIndex.html'
+		    	templateUrl : 'app/components/acceuil/acceuil.html'
 		    })
 		    .when('/index.html', {
 		    	controller:     'salmane.controlleur',
-		    	templateUrl : 'app/corpIndex.html'
+		    	templateUrl : 'app/components/acceuil/acceuil.html'
 		    })
 		    .when('/text.html', {
 		    	controller:     'salmane.controlleur',
@@ -16,7 +16,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		    })
 		    .when('/contact.html', {
 		    	controller:     'contact.controlleur',
-		    	templateUrl : '/app/components/contact/contact.html'
+		    	templateUrl : 'app/components/contact/contact.html'
 		    });  
 		    
 		    $locationProvider.html5Mode({
