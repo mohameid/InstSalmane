@@ -1,7 +1,4 @@
-    <!-- Google fonts - Roboto-->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700">
-
-    <section>  
+    <section class="background-gray-lightest">  
       <div id="contact" class="container">
         <div class="row">
           <div class="col-lg-4">
@@ -28,44 +25,44 @@
               </ul>
             </div>
           </div>
-          <div ng-controller="contact.controlleur"  class="col-lg-7 col-lg-offset-1">
+          <div  class="col-lg-7 col-lg-offset-1">
             <div class="icon"><i class="pe-7s-pen"></i></div>
             <h4 class="heading margin-bottom">Contact form</h4>
             <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
-            <form ng>
+            <form name="contactForm">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="firstname">Firstname</label>
-                    <input id="firstname" type="text" class="form-control" ng-model= "contact.prenom">
+                    <input  id="firstname" type="text" class="form-control" ng-model= "contact.prenom" required>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="lastname">Lastname</label>
-                    <input id="lastname" type="text" class="form-control" ng-model= "contact.nom">
+                    <input id="lastname" type="text" class="form-control" ng-model= "contact.nom" required>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" type="text" class="form-control" ng-model= "contact.email">
+                    <input id="email" type="email" class="form-control" ng-model= "contact.email" required>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input id="subject" type="text" class="form-control" ng-model= "contact.objet">
+                    <input id="subject" type="text" class="form-control" ng-model= "contact.objet" required>
                   </div>
                 </div>
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" class="form-control" ng-model= "contact.message"></textarea>
+                    <textarea id="message" class="form-control" ng-model= "contact.message" required></textarea>
                   </div>
                 </div>
                 <div class="col-sm-12">
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o" ng-click="envoyerMessage(contact)"></i> Send message</button>
+                  <button type="submit" class="btn btn-primary" ng-click="envoyerMessage(contact)" ng-disabled="contactForm.$invalid"><i class="fa fa-envelope-o"></i> Send message</button>
                 </div>
               </div>
             </form>
@@ -74,4 +71,4 @@
       </div>
     </section>
     <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    
