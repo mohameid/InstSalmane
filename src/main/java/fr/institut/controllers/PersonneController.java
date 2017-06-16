@@ -16,10 +16,10 @@ public class PersonneController {
 	@Autowired
 	private IPersonneRepository personneRepository;
 
-	    @RequestMapping("/")
-	    public String index() {
-	    	return "index.html";
-	    }
+//	    @RequestMapping("/")
+//	    public String index() {
+//	    	return "index.html";
+//	    }
 	    
 	    
 	    @RequestMapping("/all")

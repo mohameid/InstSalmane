@@ -16,7 +16,9 @@ function contactController($scope, $http){
 			
 	}
 	
-	
+	$scope.$on('$viewContentLoaded', function() {
+		map()
+	});
 	
 	
 }

@@ -1,7 +1,12 @@
 var app = angular.module('salmane');
 
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {  
+app.config(['$routeProvider', '$locationProvider','$provide', function($routeProvider, $locationProvider,$provide) {
+	$provide.decorator('$sniffer', function($delegate) {
+		  $delegate.history = false;
+		  return $delegate;
+	});
+	
     $routeProvider.
     when('/', {
     	controller:     'salmane.controlleur',
@@ -24,11 +29,16 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     	templateUrl : 'app/components/inscription/inscription.html'
     })
     ;
+    $locationProvider
+    .html5Mode(true)
+    .hashPrefix("");
     
-    $locationProvider.html5Mode({
-    	  enabled: true,
-    	  requireBase: false
-    });
+//    $locationProvider.hashPrefix('');
+    
+//    $locationProvider.html5Mode({
+//    	  enabled: true,
+//    	  requireBase: false
+//    });
    
 }]);
 
@@ -36,4 +46,13 @@ app.controller('salmane.controlleur', [salmaneController]);
 
 function salmaneController(){	
 	console.log("salmane Controlleur ");
+	
+	
+	function initializeGoogleApi() {
+	    var input = document.getElementById('CityInput');
+	    var options = {
+	        types: ['(cities)']
+	    };
+	    var autocomplete = new google.maps.places.Autocomplete(input, options);
+	}
 }
